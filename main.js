@@ -143,10 +143,10 @@ console.log(founded);
 const total = products.reduce((prev, el) => prev + el.price, 0);
 console.log(total);
 
-const something = products.some((el) => {
+const cheapThan = products.some((el) => {
     return el.price < 1000;
 })
-console.log(something);
+console.log(cheapThan);
 
 const withoutInStock = products.map((el) => {
     return {
@@ -254,9 +254,9 @@ const gradeLess = students.find((el) => {
 })
 console.log(gradeLess);
 const gradesOnly = students.map((el) => {return el.grade})
-const middleGrade = gradesOnly.reduce((el,prev) => {
+const middleGrade = gradesOnly.reduce((prev, el) => {
     return prev + el;
-})
+}, 0)
 console.log(middleGrade/students.length);
 
 const isActive = students.some((el) => {
@@ -363,3 +363,4 @@ localStorage.setItem("settings",toJSONSettings);
 const gettedValue = JSON.parse(localStorage.getItem("settings"));
 
 console.log(gettedValue.fontSize);
+
